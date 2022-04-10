@@ -1,14 +1,14 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts')
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 //Set up default mongoose connection
 
 const app = express();
 const db = require('./config/keys').MongoURI;
 
 mongoose.connect(db, { useUnifiedTopology: true })
-    .then(() => console.log('Mongodb connected...'))
+    .then(() => console.log('Database connected...'))
     .catch(err => console.log(err))
 
 app.use(expressLayouts);
